@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <item
+        android:id="@+id/itemCommand"
+        android:icon="@drawable/ic_list_product"
+        android:title="@string/command"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/itemProduct"
+        android:icon="@drawable/ic_baseline_article_24"
+        android:title="@string/product"
+        />
+    <!--
+    <item
+        android:title="@string/localization"
+        android:id="@+id/itemLocalization"
+        android:visible="false"/> -->
+    <item
+        android:id="@+id/itemExit"
+        android:icon="@drawable/ic_baseline_exit_to_app_24"
+        android:title="@string/exit"
+        />
+</menu>

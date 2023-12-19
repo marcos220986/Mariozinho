@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/alls_background"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <ListView
+            android:id="@+id/listView_po"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_edge" />
+
+        <LinearLayout
+            android:id="@+id/editing_rate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <TextView
+                android:id="@+id/tv_newPaimentOptions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:textAlignment="center"
+                android:textColor="#F5F7FA"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/edit_PaymentOptions_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/rounded_edge"
+                android:drawableLeft="@drawable/ic_to_receive"
+                android:hint="Nome da Opção de Pagamento"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                tools:ignore="TextContrastCheck" />
+
+            <EditText
+                android:id="@+id/edit_PaymentOptions_rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/rounded_edge"
+                android:drawableLeft="@android:drawable/ic_menu_week"
+                android:hint="Taxa Cobrada"
+                android:inputType="numberDecimal"
+                android:minHeight="48dp"
+                tools:ignore="TextContrastCheck" />
+
+            <Button
+                android:id="@+id/btn_tosave_PaymentOptions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:background="#4AAE4E"
+                android:minHeight="48dp"
+                android:onClick="savePO"
+                android:text="Atualizar"
+                android:textColor="#F2F4F4"
+                app:backgroundTint="#4CAF50"
+                app:icon="@android:drawable/ic_menu_save"
+                tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>

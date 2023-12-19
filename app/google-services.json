@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "10608255373",
+    "firebase_url": "https://acteste-c9dad-default-rtdb.firebaseio.com",
+    "project_id": "acteste-c9dad",
+    "storage_bucket": "acteste-c9dad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:10608255373:android:4046ed5cf4592ab654ddc4",
+        "android_client_info": {
+          "package_name": "portaldapecuaria.com.mariozinho"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAc2UI-yL5MFxdkwAkeDGkAcbKEQFxcpHA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

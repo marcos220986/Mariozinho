@@ -1,0 +1,20 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:textAlignment="center">
+
+    <EditText
+        android:id="@+id/etInput_float"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/rounded_edge"
+        android:drawableLeft="@drawable/ic_baseline_format_list_numbered_24"
+        android:fontFamily="sans-serif"
+        android:hint="Quantidade"
+        android:inputType="numberSigned|number|numberDecimal"
+        android:textAlignment="viewEnd" />
+</LinearLayout>

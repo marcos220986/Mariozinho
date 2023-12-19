@@ -1,0 +1,71 @@
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/drawable/ic_launcher_background.xml" value="0.290625" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.246484375" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout-w936dp/activity_login.xml" value="0.290234375" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/activity_creat_products.xml" value="0.27447916666666666" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/activity_create_commands.xml" value="0.264" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/activity_create_products.xml" value="0.264" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/activity_edit_quantity_value.xml" value="0.27447916666666666" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/activity_login.xml" value="0.38697916666666665" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/activity_login_user.xml" value="0.38697916666666665" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/activity_main.xml" value="0.27447916666666666" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/activity_options_item.xml" value="0.2604166666666667" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/activity_view_add_product_in_command.xml" value="0.27447916666666666" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/activity_view_check_notification.xml" value="0.38697916666666665" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/activity_view_command_list_product.xml" value="0.4" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/activity_view_commands.xml" value="0.2604166666666667" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/activity_view_editItemCommand.xml" value="0.27447916666666666" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/activity_view_list_commands.xml" value="0.264" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/activity_view_list_products.xml" value="0.27447916666666666" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/activity_view_location.xml" value="0.2" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/activity_view_options_item_in_command.xml" value="0.27447916666666666" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/activity_view_options_itens.xml" value="0.27447916666666666" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/activity_view_options_itens_command.xml" value="0.2604166666666667" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/activity_view_options_itens_in_command.xml" value="0.27447916666666666" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/activity_view_payment_options.xml" value="0.4" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/command_product_view_additem_new.xml" value="0.38697916666666665" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/command_product_view_qtd_del.xml" value="0.38697916666666665" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/command_view_list_product.xml" value="0.264" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/commands_view_create_new.xml" value="0.38697916666666665" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/commands_view_list.xml" value="0.38697916666666665" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/dialog_edit_new_product.xml" value="0.38697916666666665" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/dialog_input_float.xml" value="0.27447916666666666" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/dialog_input_int.xml" value="0.24537037037037038" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/dialog_input_text.xml" value="0.265625" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/dialog_stock_input.xml" value="0.27447916666666666" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/dialog_value.xml" value="0.3729166666666667" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/fragment_first.xml" value="0.27447916666666666" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/fragment_second.xml" value="0.27447916666666666" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/input_int.xml" value="0.38697916666666665" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/item_model_command.xml" value="0.3729166666666667" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/item_model_command_product.xml" value="0.38697916666666665" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/item_model_product.xml" value="0.38697916666666665" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/payment_options_view_list_create_edit.xml" value="0.38697916666666665" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/product_activity_creat_new.xml" value="0.38697916666666665" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/products_view_list.xml" value="0.38697916666666665" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/view_add_product_in_command_item_new.xml" value="0.27447916666666666" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/view_command_list_products.xml" value="0.264" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/view_commands_list.xml" value="0.27447916666666666" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/view_products_list.xml" value="0.27447916666666666" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/view_profit_margin_list.xml" value="0.27447916666666666" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/view_register_login_user.xml" value="0.1" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/layout/view_stock_record.xml" value="0.4" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/menu/command_list_products_menu.xml" value="0.2046875" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/menu/command_menu.xml" value="0.27447916666666666" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/menu/main_menu.xml" value="0.38697916666666665" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/menu/prododuct_menu.xml" value="0.27447916666666666" />
+        <entry key="..\:/Androids/AllsCaixa/app/src/main/res/xml/stock_input.xml" value="0.27447916666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

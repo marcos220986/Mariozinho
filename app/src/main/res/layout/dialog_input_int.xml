@@ -1,0 +1,19 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/etInput_int"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/rounded_edge"
+        android:drawableLeft="@drawable/ic_baseline_123_24"
+        android:fontFamily="sans-serif"
+        android:hint="Quantidade"
+        android:inputType="number"
+        android:textAlignment="viewEnd" />
+</LinearLayout>
