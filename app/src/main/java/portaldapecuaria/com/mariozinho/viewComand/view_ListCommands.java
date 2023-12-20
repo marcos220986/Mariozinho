@@ -60,8 +60,7 @@ public class view_ListCommands extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.commands_viewlist);//R.layout.activity_view_commands
-        //Inicializando Componentes
-        startComponents(); //Control+Alt+M - gerando metodos
+        startComponents();
         setTitle("Comandas");
     }
 
@@ -70,7 +69,7 @@ public class view_ListCommands extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.command_menu, menu);
         return super.onCreateOptionsMenu(menu);
-    }//Fim Geração de menu
+    }
 
     //Cliques de Menu
     @Override
@@ -299,7 +298,7 @@ public class view_ListCommands extends AppCompatActivity {
                 //Intent sendCommand_view_Command_ListProduct = new Intent(view_ListCommands.this, view_Command_ListProduct.class);
                 //sendCommand_view_Command_ListProduct.putExtra("COMMAND", chosen_Command);
                 //startActivity(sendCommand_view_Command_ListProduct);
-                startActivity(new Intent(view_ListCommands.this, view_ListCommands.class).putExtra("COMMAND", chosen_Command));
+                startActivity(new Intent(view_ListCommands.this, view_Command_ListProduct.class).putExtra("COMMAND", chosen_Command));
             }
         });
     }

@@ -1,15 +1,19 @@
 package portaldapecuaria.com.mariozinho.viewComand;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.renderscript.ScriptGroup;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -30,6 +34,8 @@ import java.util.List;
 
 import portaldapecuaria.com.mariozinho.R;
 import portaldapecuaria.com.mariozinho.database.ConnectDB;
+import portaldapecuaria.com.mariozinho.databinding.ViewCommandListProductsBinding;
+import portaldapecuaria.com.mariozinho.databinding.ViewCreatNewProductBinding;
 import portaldapecuaria.com.mariozinho.model.CheckNotification;
 import portaldapecuaria.com.mariozinho.model.Command;
 import portaldapecuaria.com.mariozinho.model.CommandProduct;
@@ -39,25 +45,19 @@ import portaldapecuaria.com.mariozinho.view_adapter.CommandProductAdaper;
 
 public class view_Command_ListProduct extends AppCompatActivity {
 
+    private ViewCommandListProductsBinding binding;
 
-    //Componetes em Tela
-    private EditText editSeach_p_in_c, input_int, input_float;//Product in Command
-    private ListView listV_product_in_command;
     //Location location;
 
     private Command c;
     private CommandProduct cp;
     private PaymentOptions po;
     private CheckNotification checkNotification = new CheckNotification();
-    private TextView tv_commandName;
-    private TextView tv_commandUid;
     private Double totalCPvalue = 0.00;
-    private String totalCPvalue_format;
-    private String sendNote;
     private String optionsPyament = "| ";
-    private String command_uid;
     private CommandProductAdaper commandProductAdaper;
     double totalCommand = 0;
+
 
     //Lista de Comandas
     private List<CommandProduct> listProduct_in_command = new ArrayList<CommandProduct>();
@@ -67,40 +67,31 @@ public class view_Command_ListProduct extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.view_command_list_products);
-        //Voltando a Lista de Comandas após minutos de inatividade
-        //Iniciando Componentes
-        tv_commandUid = (TextView) findViewById(R.id.tv_Commands_in_product);
-        listV_product_in_command = (ListView) findViewById(R.id.listV_product_of_command);
-        //Dados de Localização
-        //Recebendo dados de Comanda
+        binding = ViewCommandListProductsBinding.inflate(getLayoutInflater());
+        //setContentView(R.layout.view_command_list_products);
+        setContentView(binding.getRoot());
+        //tv_commandUid = (TextView) findViewById(R.id.tv_Commands_in_product);
+        //listV_product_in_command = (ListView) findViewById(R.id.listV_product_of_command);
         Intent intent = getIntent();
-        c = (Command) intent.getExtras().getSerializable("COMMAND");//Recuperando Comanda
-        //Gerando ListView
+        c = (Command) intent.getExtras().getSerializable("COMMAND");
         completeArrayAdapterP_in_C();
-        //Setando componentes
         setTitle("Pedidos");
-        sendNote = "*Mensagem Automática:*\n *Lista de Pedidos:* " + ".\n \n \n";
-        tv_commandUid.setText("Commanda de: " + c.getName());
+        String sendNote = "*Mensagem Automática:*\n *Lista de Pedidos:* " + ".\n \n \n";
+        binding.tvCommandsInProduct.setText("Commanda de: " + c.getName());
+        //tv_commandUid.setText();
     }
-
-    //Trabalhando Menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.command_list_products_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.itemCPAdd:
-                finish(); //Fechando Tela Atual
-                Intent start_view_add_product_in_command = new Intent(this, view_Add_Product_in_Command.class);
-                start_view_add_product_in_command.putExtra("COMMAND", c);
-                startActivity(start_view_add_product_in_command);
+                finish();
+                startActivity(new Intent(this, view_Add_Product_in_Command.class).putExtra("COMMAND", c));
                 break;
             case R.id.itemCPAReceive:
                 toReceive();//Recebendo
@@ -121,7 +112,7 @@ public class view_Command_ListProduct extends AppCompatActivity {
         if (totalCommand > 0) {
             LayoutInflater li = getLayoutInflater();
             View vi = li.inflate(R.layout.dialog_input_float, null);
-            input_float = (EditText) vi.findViewById(R.id.etInput_float);
+            EditText input_float = (EditText) vi.findViewById(R.id.etInput_float);
             new AlertDialog.Builder(view_Command_ListProduct.this)
                     .setTitle("Valor da Commanda: R$ " + new DecimalFormat("#,##0.00").format(totalCommand))
                     .setMessage("Para calcular troco. Digite valor recebido e aperte em TROCO. Ou em RECEBER para marcar como recebido.")
@@ -180,33 +171,30 @@ public class view_Command_ListProduct extends AppCompatActivity {
     private void completeArrayAdapterP_in_C() {
         commandProductAdaper = new CommandProductAdaper(getBaseContext(), R.layout.item_model_command_product, c.getListProducts());
         //arrayAdapterProduct_in_Command = new ArrayAdapter<CommandProduct>(view_Command_ListProduct.this, android.R.layout.simple_list_item_1, listProduct_in_command);
-        listV_product_in_command.setAdapter(commandProductAdaper);
+        binding.listVProductOfCommand.setAdapter(commandProductAdaper);
         //Cique Curto
-        listV_product_in_command.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        binding.listVProductOfCommand.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                final EditText input = new EditText(view_Command_ListProduct.this);
                 LayoutInflater li = getLayoutInflater();
                 View vi = li.inflate(R.layout.dialog_input_int, null);
-                input_int = (EditText) vi.findViewById(R.id.input_int);
+                EditText input_int = (EditText) vi.findViewById(R.id.etInput_int);
                 new AlertDialog.Builder(view_Command_ListProduct.this)
-                        .setTitle("Quantidade de Item")
-                        .setMessage("Adicione ou Retire Quantidade")
+                        .setTitle("Item: " + c.getListProducts().get(position).getName())
+                        .setMessage("Quantidade atual: " + c.getListProducts().get(position).getProduct_quantity())
                         .setView(vi)
                         .setPositiveButton("Adicionar", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                if (input.getText().toString().trim().length() > 0) {
-                                    int qtd = c.getListProducts().get(position).getProduct_quantity() + Integer.parseInt(input.getText().toString());
-                                    c.getListProducts().get(position).setProduct_quantity(qtd);
+                                if (input_int.getText().toString().trim().length() > 0) {
+                                    c.getListProducts().get(position).setProduct_quantity(c.getListProducts().get(position).getProduct_quantity() + Integer.parseInt(input_int.getText().toString()));
                                     saveUpdate(c);
-                                    msComandListProduct("Foi adicionado: " + qtd + " unidade(s)");
+                                    msComandListProduct("Foi adicionado: +" + Integer.parseInt(input_int.getText().toString()) + " unidade(s)");
                                     dialogInterface.dismiss();
                                 } else {
-                                    int qtd = c.getListProducts().get(position).getProduct_quantity() + 1;
-                                    c.getListProducts().get(position).setProduct_quantity(qtd);
+                                    c.getListProducts().get(position).setProduct_quantity(c.getListProducts().get(position).getProduct_quantity() + 1);
                                     saveUpdate(c);
-                                    msComandListProduct("Foi adicionado: " + qtd + " unidade(s)");
+                                    msComandListProduct("Foi adicionado: +" + 1 + " unidade(s)");
                                     dialogInterface.dismiss();
                                 }
                             }
@@ -214,11 +202,10 @@ public class view_Command_ListProduct extends AppCompatActivity {
                         .setNegativeButton("Retirar", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
-                                if (input.getText().toString().trim().length() > 0) {
-                                    int qtd = Integer.parseInt(input.getText().toString());
+                                if (input_int.getText().toString().trim().length() > 0) {
                                     int qtd_product = c.getListProducts().get(position).getProduct_quantity();
-                                    if (qtd_product >= qtd) {
-                                        qtd_product -= qtd;
+                                    if (qtd_product >= Integer.parseInt(input_int.getText().toString())) {
+                                        qtd_product -= Integer.parseInt(input_int.getText().toString());
                                         c.getListProducts().get(position).setProduct_quantity(qtd_product);
                                         saveUpdate(c);//Salvando alterações
                                         dialogInterface.dismiss();
@@ -226,10 +213,9 @@ public class view_Command_ListProduct extends AppCompatActivity {
                                         msComandListProduct("Quantidade atual não pode ser menor que '0' zero");
                                     }
                                 } else {
-                                    int qtd = 1;
                                     int qtd_product = c.getListProducts().get(position).getProduct_quantity();
-                                    if (qtd_product >= qtd) {
-                                        qtd_product -= qtd;
+                                    if (qtd_product >= 1) {
+                                        qtd_product -= 1;
                                         c.getListProducts().get(position).setProduct_quantity(qtd_product);
                                         saveUpdate(c);//Salvando alterações
                                         dialogInterface.dismiss();
@@ -245,7 +231,7 @@ public class view_Command_ListProduct extends AppCompatActivity {
 
         });
         //Clique Longo
-        listV_product_in_command.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        binding.listVProductOfCommand.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
                 CommandProduct chosen_product2 = c.getListProducts().get(i);
@@ -278,17 +264,27 @@ public class view_Command_ListProduct extends AppCompatActivity {
 
 
     public void openLink() {
-        new AlertDialog.Builder(view_Command_ListProduct.this).setTitle("Importante...")
-                .setMessage("Forma de Pagamento é feito Manualmente.")
-                .setPositiveButton("Enviar", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
+        LayoutInflater li = getLayoutInflater();
+        View vi = li.inflate(R.layout.dialog_send_payment, null);
+        Button btn_send_list = (Button) vi.findViewById(R.id.btn_send_list);
+        Button btn_send_debit = (Button) vi.findViewById(R.id.btn_send_debit);
+        btn_send_debit.setText(" Débito com 3%: R$" + new DecimalFormat("#,##0.00").format((c.totalCommandValue() + (c.totalCommandValue() * 0.03))));
+        Button btn_send_credit = (Button) vi.findViewById(R.id.btn_send_credit);
+        btn_send_credit.setText(" Crédito com 5%: R$" + new DecimalFormat("#,##0.00").format((c.totalCommandValue() + (c.totalCommandValue() * 0.05))));
+        Button btn_send_other = (Button) vi.findViewById(R.id.btn_send_other);
+        btn_send_other.setText(" Valor com 10%: R$" + new DecimalFormat("#,##0.00").format((c.totalCommandValue() + (c.totalCommandValue() * 0.1))));
+        Button btn_send_0 = (Button) vi.findViewById(R.id.btn_send_0);
+        btn_send_0.setText("Valor Avista: R$" + c.totalCommandValue());
+        new AlertDialog.Builder(view_Command_ListProduct.this).setView(vi).show();
+
+
+
                         /*
                         for (int li = 0; li < c.getListProducts().size(); li++) {
                             sendNote += "```" + c.getListProducts().get(li).getName()
                                     + "```" + "\n" + "_" + c.getListProducts().get(li).Description()
                                     + "_ *" + c.getListProducts().get(li).totalValue_format() + "* \n \n";
-                        } */
+                        }
                         sendNote = sendNote + "\n Valor *aproximado* na Data de de hoje: *"
                                 + new DecimalFormat("#,##0.00").format(c.totalCommandValue()) + "* \n\n"
                                 + "Nosso PIX *99 991633616* \n" + "```Em nome de: Jessiane Sousa```";
@@ -299,13 +295,8 @@ public class view_Command_ListProduct extends AppCompatActivity {
                         sendIntent.setType("text/plain");
                         Intent shareIntent = Intent.createChooser(sendIntent, null);
                         startActivity(shareIntent);
-                    }
-                }).setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.dismiss();
-            }
-        }).show();
+                        */
+
     }
 
     //Retornando Guia anterior com botão de Retorno do Android

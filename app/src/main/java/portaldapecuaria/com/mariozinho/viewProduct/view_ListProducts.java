@@ -243,17 +243,13 @@ public class view_ListProducts extends AppCompatActivity {
     }
 
     @Override
-
-    //Retornar guia anterior com Botão Padrão do Android
-    public void onBackPressed() {
+    public void onBackPressed() { //Retornar guia anterior com Botão Padrão do Android
         super.onBackPressed();
         finish();
         Intent start_view_createProduct = new Intent(this, MainActivity.class);
         startActivity(start_view_createProduct);
     }
-
-    //Trabalhando Code barras
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) { //Trabalhando Code barras
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if (result != null) {
             if (result.getContents() == null) {
@@ -272,6 +268,5 @@ public class view_ListProducts extends AppCompatActivity {
     public void ms_LONG(String m) {
         Toast.makeText(this, m, Toast.LENGTH_LONG).show();
     }
-
 
 }

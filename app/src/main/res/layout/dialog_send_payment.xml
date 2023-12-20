@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dialog_send_paymment_id"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <Button
+        android:id="@+id/btn_send_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lista"
+        android:textColor="#0E0E0E"
+        app:backgroundTint="#009688"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="42dp" />
+
+    <Button
+        android:id="@+id/btn_send_debit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:text="Débito (3%)"
+        app:backgroundTint="#4CAF50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_send_credit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Credito (5%)"
+        android:textColor="#0E0E0E"
+        app:backgroundTint="#03A9F4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_send_other"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Outros (10%)"
+        app:backgroundTint="#4CAF50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_send_0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Á Vista"
+        android:textColor="#0C0C0C"
+        app:backgroundTint="#00BCD4"
+        tools:layout_editor_absoluteX="158dp" />
+</android.widget.LinearLayout>

@@ -69,10 +69,13 @@ public class Command implements Serializable{
 
     public double totalCommandValue(){//Obter Total da Commanda
         double totalValue = 0.00;
-        /*
-        for (int i = 0; i < this.getListProducts().size(); i++) {
-            totalValue += (this.getListProducts().get(i).getUnitary_value() * this.getListProducts().get(i).getProduct_quantity());
-        } */
+        try {
+            for (int i = 0; i < this.getListProducts().size(); i++) {
+                totalValue += (this.getListProducts().get(i).getUnitary_value() * this.getListProducts().get(i).getProduct_quantity());
+            }
+        }catch (Exception e){
+            
+        }
         return totalValue;
     }
 

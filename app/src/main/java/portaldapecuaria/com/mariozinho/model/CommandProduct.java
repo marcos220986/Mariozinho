@@ -78,7 +78,7 @@ public class CommandProduct implements Serializable {
     }
 
     public void setProduct_quantity(Integer product_quantity) {
-        this.product_quantity = product_quantity;
+            this.product_quantity = product_quantity;
     }
 
 
